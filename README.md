@@ -1,177 +1,129 @@
-# **Task Manager Application**
+# Task Manager Application
 
-**A full-stack task management system built with React (frontend), Node.js & Express (backend), and MongoDB for data storage. Users can register, log in, and manage tasks efficiently.**
+A full-stack Task Manager web application built using React (frontend), Node.js & Express (backend), and MongoDB (database).
 
----
+The application helps users manage daily tasks efficiently while also using weather data to improve planning and decision-making.
 
-## **Project Structure**
-
-task-manager  
-  backend  
-    models  
-      Task.js – Task schema defining title, date, notes, priority, and completion  
-      user.js – User schema for authentication  
-    routes  
-      authRoutes.js – User registration and login routes  
-      taskRoutes.js – Task CRUD routes  
-    server.js – Backend server configuration  
-    package.json – Backend dependencies  
-    package-lock.json  
-    .env – Environment variables (not committed)  
-  frontend  
-    public  
-      index.html  
-      manifest.json  
-      robots.txt  
-    src  
-      components – Reusable UI components  
-      pages – Pages such as TaskPage, LoginPage, and RegisterPage  
-      App.js  
-      App.css  
-      index.js  
-      TaskPage.js – Task management interface  
-    package.json – Frontend dependencies  
-    package-lock.json  
-.gitignore – Git ignored files  
-README.md – Project documentation  
+Project Status: Under active development
 
 ---
 
-## **Prerequisites**
+## Features
 
-- Node.js  
-- MongoDB Compass  
-- Git  
+### User System
+- User registration and login
+- Secure authentication using JWT
+- User profile management (name, email, location)
+
+### Task Management
+- Create, update, and delete tasks
+- Add task title, date, time, priority, and notes
+- Mark tasks as completed
+- Separate views for active and completed tasks
+
+### Weather-Based Planning
+The weather feature helps users plan their tasks ahead of time by showing forecast conditions based on their location.
+
+This allows users to make better scheduling decisions depending on upcoming weather conditions.
+
+- Real-time weather data using OpenWeather API
+- Weekly weather forecast based on user location
+- Weather-based planning suggestions (rain, heat, clear conditions)
+- Helps users decide when to complete outdoor or time-sensitive tasks
+
+### UI Features
+- Clean and responsive dashboard
+- Priority indicators (Low, Medium, High with colors)
+- Completed tasks shown with strikethrough styling
 
 ---
 
-## **Setup and Installation**
+## Tech Stack
 
-### **1. Clone the repository**
+- Frontend: React, Axios, CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT
+- API Integration: OpenWeather API
 
+---
 
+## Project Structure
+
+### Backend
+- models/ → User and Task schemas
+- routes/ → Authentication, task, and weather routes
+- server.js → Backend entry point
+
+### Frontend
+- pages/TaskPage.js → Main dashboard
+- pages/Login.js → Login screen
+- pages/Register.js → Signup screen
+- pages/Profile.js → User profile management
+- components/ → Reusable UI components
+
+---
+
+## Installation and Setup
+
+### Clone Repository
+```bash
 git clone https://github.com/your-username/task-manager.git
-
 cd task-manager
-
-
----
-
-### **2. Backend Setup**
-
-
+Backend Setup
 cd backend
 npm install
 
-
-Create a **.env** file in the backend folder:
-
+Create .env file:
 
 MONGO_URI=mongodb://127.0.0.1:27017/taskmanager
 JWT_SECRET=your_secret_key
 
-
-Start the backend server:
-
+Start backend:
 
 npm start
 
+Backend runs at:
 
-Backend runs at:  
 http://localhost:5000
-
----
-
-### **3. Frontend Setup**
-
-Open a new terminal:
-
-
+Frontend Setup
 cd frontend
 npm install
 npm run dev
 
+Frontend runs at:
 
-Frontend runs at:  
 http://localhost:3000
-
----
-
-### **4. MongoDB Compass Setup**
-
-- Open MongoDB Compass  
-- Create a new connection:  
-  mongodb://127.0.0.1:27017  
-- Database name: taskmanager  
-- Collection name: tasks  
-- The database populates automatically when tasks are created
-
----
-
-## **Database Schema**
-
-Task Document Example:
-
-
+Database Example
+Task Document
 {
-"title": "Read book",
-"date": "2026-03-10",
-"time": "12:30",
-"priority": "Low",
-"notes": "Read a programming book",
-"completed": false,
-"user": "userId"
+  "title": "Study React",
+  "date": "2026-05-20",
+  "time": "15:00",
+  "priority": "High",
+  "notes": "Finish hooks topic",
+  "completed": false
 }
-
-
-User Document Example:
-
-
+User Document
 {
-"name": "John Doe",
-"email": "john@example.com
-",
-"password": "hashed_password"
+  "name": "John Doe",
+  "email": "john@example.com",
+  "location": "Durban"
 }
+Project Highlights
+Full-stack MERN-style architecture
+Real-world task management system
+Weather-based planning integration
+Clean separation of frontend and backend
+Beginner-friendly but scalable structure
+Project Status
 
+##Under Construction
 
----
+This project is still being actively developed. Planned improvements include:
 
-## **Technologies Used**
-
-- React  
-- Node.js  
-- Express  
-- MongoDB  
-- JWT for authentication  
-- Axios for API requests  
-
----
-
-## **Troubleshooting**
-
-- Backend not running → Check .env file and MongoDB, run npm install and npm start  
-- Frontend not loading → Run npm install and npm run dev in frontend  
-- Tasks not saving → Check backend logs and MongoDB connection  
-
----
-
-## **How to Use**
-
-1. Register an account  
-2. Log in  
-3. Add tasks with title, date, time, priority, and notes  
-4. Mark tasks as complete  
-5. Delete or edit tasks  
-
----
-
-## **Contribution**
-
-Fork the repository, create a new branch, and submit a pull request.
-
----
-
-## **License**
-
-This project is for educational purposes.
+Task editing improvements
+Notifications and reminders
+Calendar view integration
+UI/UX improvements
+Mobile responsiveness
